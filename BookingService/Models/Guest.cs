@@ -1,11 +1,26 @@
-﻿namespace BookingService.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BookingService.Models
 {
     public class Guest
     {
+        [Key]
+        [Required]
         public string Id { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string LastName { get; set; }
+
+        [EmailAddress]
         public string Email { get; set; }
+
+        [Required]
+        [Phone]
         public string PhoneNumber { get; set; }
 
 
