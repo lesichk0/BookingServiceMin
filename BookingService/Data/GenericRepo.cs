@@ -30,5 +30,10 @@ namespace BookingService.Data
             var entity = await GetByIdAsync(id);
             _entities.Remove(entity);
         }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
+        }
     }
 }

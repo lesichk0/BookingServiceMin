@@ -10,7 +10,7 @@ namespace BookingService.Models
         public int Id { get; set; }
 
         [Required]
-        public string GuestId { get; set; }
+        public int GuestId { get; set; }
 
         [Required]
         public int RoomId { get; set; }

@@ -9,9 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
 opt.UseInMemoryDatabase("InMem"));
-builder.Services.AddScoped<IGenericRepo<Guest>, GuestRepo>();
-builder.Services.AddScoped<IGenericRepo<Room>, RoomRepo>();
-builder.Services.AddScoped<IGenericRepo<Reservation>, ReservationRepo>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IGuestRepo, GuestRepo>();
+builder.Services.AddScoped<IRoomRepo, RoomRepo>();
+builder.Services.AddScoped<IReservationRepo, ReservationRepo>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

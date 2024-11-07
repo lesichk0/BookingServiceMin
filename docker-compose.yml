@@ -1,0 +1,6 @@
+services:
+  bookingservice:
+    image: ${DOCKER_REGISTRY-}bookingservice
+    build:
+      context: .
+      dockerfile: BookingService/Dockerfile
